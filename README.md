@@ -20,4 +20,9 @@ Dart does not have keywords like public, private or protected
 
 Optional parameters instead of function overloading  
 optional parameters are enclosed inside curly braces {}    
+
+
+
+  In object-oriented programming (OOP), a factory is an object for creating other objects – formally a factory is a function or method that returns objects of a varying prototype or class[1] from some method call, which is assumed to be "new".   
+
   
