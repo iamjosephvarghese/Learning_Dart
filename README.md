@@ -16,3 +16,8 @@ Dart does not have keywords like public, private or protected
  To mark a Dart identifier as private, start its name with an underscore ( _ ). You can convert speed to read-only by changing its name and adding a getter.    
 
  By default, Dart provides implicit getters and setters for all public instance variables. You only need to define getters/setters when you want to enforce read-only or write-only variables, compute or verify a value, or update a value elsewhere.     
+
+
+Optional parameters instead of function overloading  
+optional parameters are enclosed inside curly braces {}    
+  
