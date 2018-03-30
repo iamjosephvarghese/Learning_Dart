@@ -64,3 +64,116 @@ TODO: checkout runes
 Only an expression can be used not a statement   
 
 The main() function returns void and has an optional List<String> parameter for arguments.     
+
+
+Type test operators
+is, as, is!
+
+Assign value to b if b is null; otherwise, b stays the same
+b ??= value;    
+
+Two types of conditional expressions
+```
+condition ? expr1 : expr2
+```
+If condition is true, evaluates expr1 (and returns its value); otherwise, evaluates and returns the value of expr2.
+```
+expr1 ?? expr2
+```
+If expr1 is non-null, returns its value; otherwise, evaluates and returns the value of expr2.     
+
+
+
+
+Cascades (..) allow you to make a sequence of operations on the same object. Do make sure what is returned,  you can’t construct a cascade on void.
+
+To partially handle an exception, while allowing it to propagate, use the rethrow keyword.      
+
+
+### Classes and constructors
+```
+class Point {
+  num x, y;
+
+  Point(num x, num y) {
+    // There's a better way to do this, stay tuned.
+    this.x = x;
+    this.y = y;
+  }
+}
+```
+
+Use this
+```
+class Point {
+  num x, y;
+
+  // Syntactic sugar for setting x and y
+  // before the constructor body runs.
+  Point(this.x, this.y);
+}
+```
+
+Named constructors are allowed in dart
+```
+// Named constructor
+  Point.origin() {
+    x = 0;
+    y = 0;
+  }
+  ```
+
+  Constructors are not inherited by subclasses, we can implement the named constructor in the subclass if required    
+
+  ### redirecting constructors
+  ```
+  class Point {
+  num x, y;
+
+  // The main constructor for this class.
+  Point(this.x, this.y);
+
+  // Delegates to the main constructor.
+  Point.alongXAxis(num x) : this(x, 0);
+}
+```
+
+
+Getters and setters are special methods that provide read and write access to an object’s properties. We can create additional properties by implementing getters and setters, using the get and set keywords.    
+
+
+### Abstract methods
+Make methods abstract by using ; instead of method body
+
+
+
+noSuchMethod()
+
+To detect or react whenever code attempts to use a non-existent method or instance variable, you can override noSuchMethod()
+```
+class A {
+  // Unless you override noSuchMethod, using a
+  // non-existent member results in a NoSuchMethodError.
+  @override
+  void noSuchMethod(Invocation invocation) {
+    print('You tried to use a non-existent member: ' +
+        '${invocation.memberName}');
+  }
+}
+```
+
+
+### Enumerated Types
+Enumerated types, often called enumerations or enums, are a special kind of class used to represent a fixed number of constant values.
+
+```
+enum Color { red, green, blue }
+assert(Color.red.index == 0);
+assert(Color.green.index == 1);
+assert(Color.blue.index == 2);
+
+//get all values from enum
+List<Color> colors = Color.values;
+
+```
+Each value in an enum has an index getter, which returns the zero-based position of the value in the enum declaration.
