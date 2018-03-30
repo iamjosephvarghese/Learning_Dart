@@ -50,3 +50,17 @@ To run the programs in checked mode use :
 ```
 dart -c file_name.Dart
 ```     
+
+
+
+
+
+Dart’s treatment of booleans is designed to avoid the strange behaviors that can arise when many values can be treated as true. What this means for you is that, instead of using code like if (nonbooleanValue), you should instead explicitly check for values. For example:
+
+TODO: checkout runes
+
+=> expr is shorthand for {return expr;}   
+=> is sometimes refreed to as fat arrow syntax
+Only an expression can be used not a statement   
+
+The main() function returns void and has an optional List<String> parameter for arguments.     
