@@ -1,7 +1,7 @@
 # Learning_Dart
 
-All identifiers are public by default   
-Dart does not have keywords like public, private or protected    
+- All identifiers are public by default   
+- Dart does not have keywords like public, private or protected    
 
  All Dart classes have a toString() method that you can override to provide more useful output.    
 
