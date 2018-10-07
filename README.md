@@ -177,3 +177,5 @@ List<Color> colors = Color.values;
 
 ```
 Each value in an enum has an index getter, which returns the zero-based position of the value in the enum declaration.
+
+#To Be Continued
